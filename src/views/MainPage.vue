@@ -1,10 +1,9 @@
-<script xmlns="http://www.w3.org/1999/html">
-import InputText from "primevue/inputtext";
-import Button from "primevue/button";
+<script>
 
 export default {
   data() {
     return {
+      currentIndex: 0,
       events: [
         {
           name: "сходка милф",
@@ -52,8 +51,33 @@ export default {
       ]
     };
   },
+
   components: {
-  }
+
+  },
+
+  computed: {
+    currentLocation() {
+      return this.locations[this.currentIndex];
+    }
+  },
+
+  methods: {
+    nextLocation() {
+      if (this.currentIndex < this.locations.length - 1) {
+        this.currentIndex++;
+      } else {
+        this.currentIndex = 0;
+      }
+    },
+    prevLocation() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+      } else {
+        this.currentIndex = this.locations.length - 1;
+      }
+    }
+  },
 };
 </script>
 
@@ -68,32 +92,38 @@ export default {
       Наши филиалы
     </div>
 
-    <div class="flex flex-row justify-content-around p-4 m-4 border-round-3xl gap-4 pb-4 bg-gray-900">
-      <div v-for="l in locations" class="flex flex-column p-4 gap-2 text-xl w-full bg-white text-gray-900 border-round-3xl
-           border-gray-900 align-items-center">
-        <div class="flex w-fit text-3xl font-semibold my-3">
-          {{l.name}}
+    <div class="flex align-items-center justify-content-center border-round-3xl gap-2 pb-4">
+      <button class="pi pi-arrow-left text-8xl text-gray-900 border-none bg-transparent cursor-pointer"
+              @click="prevLocation"/>
+
+      <div class="flex flex-column w-8 gap-2 text-xl text-gray-900 bg-transparent align-items-center">
+        <img class="w-7 border-round-3xl shadow-4"
+             :src="currentLocation.img"
+             :alt="currentLocation.name"/>
+
+        <div class="flex w-fit text-6xl font-bold my-2">
+          {{currentLocation.name}}
         </div>
-        <div class="flex flex-column align-items-center">
-          <img class="w-8 border-round-3xl" :src="l.img" />
-          <div class="flex w-full gap-2 p-2 w-fit flex-column">
 
-            <div class="text-xl">
-              <b>Адрес:</b> {{l.address}}
-            </div>
+        <div class="flex flex-column align-items-center gap-3 w-full">
+          <div class="text-3xl text-center">
+            <b>Адрес:</b>
+            {{currentLocation.address}}
+          </div>
 
-            <div class="text-xl">
-              <b>Телефон:</b> {{l.phone}}
-            </div>
+          <div class="text-3xl">
+            <b>Телефон:</b> {{currentLocation.phone}}
+          </div>
 
-            <div class="text-xl">
-              <p><b>Режим работы:</b></p>
-              <p v-for="time in l.times">{{time}}</p>
-            </div>
-
+          <div class="text-3xl text-center">
+            <p class="font-bold mb-2">Режим работы:</p>
+            <p v-for="time in currentLocation.times" :key="time">{{time}}</p>
           </div>
         </div>
       </div>
+
+      <button class="pi pi-arrow-right text-8xl text-gray-900 border-none bg-transparent cursor-pointer"
+              @click="nextLocation"/>
     </div>
 
     <div id="events" class="text-8xl font-medium text-gray-900 text-center">
