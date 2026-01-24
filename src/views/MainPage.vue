@@ -127,6 +127,13 @@ export default {
       Наши филиалы
     </div>
 
+    <div id="locations" class="text-3xl md:text-4xl text-gray-900 pt-4 text-center">
+      <span class="label_text_color font-semibold">Больше филиалов — больше возможностей!</span><br>
+      Мы позаботились о том, чтобы качественный кофе и уютная атмосфера<br>
+      были доступны вам в любой части города. В каждом филиале —<br>
+      одинаково высокий уровень обслуживания и неизменно вкусные напитки!
+    </div>
+
     <div class="flex align-items-center justify-content-center border-round-3xl gap-2 p-4">
       <button class="pi pi-arrow-left text-7xl text-gray-900 border-none bg-transparent cursor-pointer ml-auto"
               @click="prevLocation"/>
@@ -166,47 +173,66 @@ export default {
               @click="nextLocation"/>
     </div>
 
-    <div id="locations" class="text-3xl md:text-4xl font-semibold text-gray-900 py-4 text-center">
-      <span class="label_text_color">Больше филиалов — больше возможностей!</span><br>
-      Мы позаботились о том, чтобы качественный кофе и уютная атмосфера<br>
-      были доступны вам в любой части города. В каждом филиале —<br>
-      одинаково высокий уровень обслуживания и неизменно вкусные напитки!
-    </div>
-
     <div id="bonuses" class="text-8xl font-medium text-gray-900 text-center">
       Бонусная программа
     </div>
 
-    <div class="flex flex-row justify-content-around px-4 gap-6">
-      <div class="flex flex-row p-4 gap-2 w-full">
-        <div class="flex text-8xl label_text_color">1</div>
-        <div class="flex flex-column">
-          <p class="text-gray-900 text-3xl">Копите баллы:</p>
-          <p class="text-gray-900 text-xl">
-            За каждый заказ
-            вы получаете баллы, которые автоматически начисляются на ваш бонусный счет.
+    <div class="mx-6 gap-4">
+      <div id="bonus" class="flex justify-content-between flex-row text-xl md:text-2xl border-round-3xl text-gray-900 p-4">
+        <div>
+          <span class="label_text_color text-2xl md:text-3x font-semibold">Ваша любовь к кофе окупается!</span><br>
+          Присоединяйтесь к нашей бонусной программе и получайте<br>
+          скидки, специальные предложения и подарки за каждую покупку.<br>
+          Чем чаще вы к нам — тем больше бонусов накапливаете!<br>
+          <span class="font-semibold">Отсканируйте qr-code или зарегистрируйтесь по кнопке ниже.</span>
+        </div>
+
+        <div class="w-12rem h-12rem flex align-items-center bg-transparent justify-content-center">
+          <img src="../images/c0ff1bb7b16e9820650c4f326ee87710.png" alt="QR-код бонусной программы"
+               class="w-full h-full border-round-2xl">
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-column md:flex-row justify-content-between mx-7 gap-4">
+      <div class="flex flex-row p-4 gap-3 w-full border-2 card-bg-color border-round-2xl shadow-2">
+        <div class="flex-shrink-0">
+          <div class="flex text-6xl label_text_color bg-primary-100 border-circle w-5rem h-5rem align-items-center justify-content-center">
+            1
+          </div>
+        </div>
+        <div class="flex flex-column gap-2">
+          <p class="text-gray-900 text-2xl font-bold mb-2">Зарегистрируйтесь</p>
+          <p class="text-gray-900 text-lg">
+            Сканируйте QR-код или оставьте номер телефона, чтобы присоединиться к бонусной программе.
           </p>
         </div>
       </div>
 
-      <div class="flex flex-row p-4 gap-2 w-full">
-        <div class="flex text-8xl label_text_color">2</div>
-        <div class="flex flex-column">
-          <p class="text-gray-900 text-3xl">Копите баллы:</p>
-          <p class="text-gray-900 text-xl">
-            За каждый заказ
-            вы получаете баллы, которые автоматически начисляются на ваш бонусный счет.
+      <div class="flex flex-row p-4 gap-3 w-full border-2 card-bg-color border-round-2xl shadow-2">
+        <div class="flex-shrink-0">
+          <div class="flex text-6xl label_text_color bg-primary-100 border-circle w-5rem h-5rem align-items-center justify-content-center">
+            2
+          </div>
+        </div>
+        <div class="flex flex-column gap-2">
+          <p class="text-gray-900 text-2xl font-bold mb-2">Копите баллы</p>
+          <p class="text-gray-900 text-lg">
+            За каждый заказ получайте баллы, которые автоматически начисляются на ваш бонусный счет.
           </p>
         </div>
       </div>
 
-      <div class="flex flex-row p-4 gap-2 w-full">
-        <div class="flex text-8xl label_text_color">3</div>
-        <div class="flex flex-column">
-          <p class="text-gray-900 text-3xl">Копите баллы:</p>
-          <p class="text-gray-900 text-xl">
-            За каждый заказ
-            вы получаете баллы, которые автоматически начисляются на ваш бонусный счет.
+      <div class="flex flex-row p-4 gap-3 w-full border-2 card-bg-color border-round-2xl shadow-2">
+        <div class="flex-shrink-0">
+          <div class="flex text-6xl label_text_color bg-primary-100 border-circle w-5rem h-5rem align-items-center justify-content-center">
+            3
+          </div>
+        </div>
+        <div class="flex flex-column gap-2">
+          <p class="text-gray-900 text-2xl font-bold mb-2">Получайте выгоду</p>
+          <p class="text-gray-900 text-lg">
+            Обменивайте накопленные баллы на бесплатные напитки, скидки и специальные предложения.
           </p>
         </div>
       </div>
