@@ -128,7 +128,7 @@ export default {
     </div>
 
     <div class="flex align-items-center justify-content-center border-round-3xl gap-2 p-4">
-      <button class="pi pi-arrow-left text-8xl text-gray-900 border-none bg-transparent cursor-pointer ml-auto"
+      <button class="pi pi-arrow-left text-7xl text-gray-900 border-none bg-transparent cursor-pointer ml-auto"
               @click="prevLocation"/>
 
       <div class="flex flex-row gap-4 text-xl text-gray-900 bg-transparent align-items-center
@@ -162,8 +162,15 @@ export default {
         </div>
       </div>
 
-      <button class="pi pi-arrow-right text-8xl text-gray-900 border-none bg-transparent cursor-pointer mr-auto"
+      <button class="pi pi-arrow-right text-7xl text-gray-900 border-none bg-transparent cursor-pointer mr-auto"
               @click="nextLocation"/>
+    </div>
+
+    <div id="locations" class="text-3xl md:text-4xl font-semibold text-gray-900 py-4 text-center">
+      <span class="label_text_color">Больше филиалов — больше возможностей!</span><br>
+      Мы позаботились о том, чтобы качественный кофе и уютная атмосфера<br>
+      были доступны вам в любой части города. В каждом филиале —<br>
+      одинаково высокий уровень обслуживания и неизменно вкусные напитки!
     </div>
 
     <div id="bonuses" class="text-8xl font-medium text-gray-900 text-center">
