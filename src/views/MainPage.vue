@@ -19,7 +19,7 @@ export default {
           address: "КБР, г.Нальчик, ул.Шогенцукова 10",
           timestart: "14:00",
           timeend: "16:00",
-          img: "https://i.pinimg.com/1200x/5c/a7/24/5ca724eba57508d56fb92a9dcf2bb485.jpg",
+          img: `../src/images/events/IMG_9369.JPG`,
           description: "Мой отец довольно таки заядлый рыболов. Он частенько приносит домой очень крупных тунцов, сомов, щук и судаков.\n" +
               "\n" +
               "Но больше всего мне нравились тунцы, золотые гиганты."
@@ -29,7 +29,7 @@ export default {
           address: "КБР, г.Нальчик, ул.Шогенцукова 10",
           timestart: "14:00",
           timeend: "16:00",
-          img: "https://i.pinimg.com/1200x/5c/a7/24/5ca724eba57508d56fb92a9dcf2bb485.jpg",
+          img: `../src/images/events/IMG_9363.JPG`,
           description: "Мой отец довольно таки заядлый рыболов. Он частенько приносит домой очень крупных тунцов, сомов, щук и судаков.\n" +
               "\n" +
               "Но больше всего мне нравились тунцы, золотые гиганты."
@@ -39,7 +39,7 @@ export default {
           address: "КБР, г.Нальчик, ул.Шогенцукова 10",
           timestart: "14:00",
           timeend: "16:00",
-          img: "https://i.pinimg.com/1200x/5c/a7/24/5ca724eba57508d56fb92a9dcf2bb485.jpg",
+          img: `../src/images/events/IMG_9363.JPG`,
           description: "Мой отец довольно таки заядлый рыболов. Он частенько приносит домой очень крупных тунцов, сомов, щук и судаков.\n" +
               "\n" +
               "Но больше всего мне нравились тунцы, золотые гиганты."
@@ -127,8 +127,8 @@ export default {
 <template>
   <div class="flex flex-column h-screen w-full gap-4">
     <div class="flex flex-column slogan-bg mx-4 min-h-screen align-items-center justify-content-center border-round-3xl">
-      <label class="text-8xl">Coffee&Code</label>
-      <label class="text-7xl text-center">Место, где кофе встречается с креативом</label>
+      <label class="text-8xl">Almanac</label>
+      <label class="text-7xl text-center">Календарь хороших вкусов</label>
     </div>
 
     <div id="events" class="text-3xl md:text-5xl font-semibold text-gray-900 py-4 text-center">
@@ -180,7 +180,7 @@ export default {
 
       <div class="flex flex-row gap-4 w-6 text-xl text-gray-900 bg-transparent align-items-center
            justify-content-center m-4">
-        <img class="flex-shrink-0 w-full md:w-6 h-25rem border-round-3xl shadow-6"
+        <img class="flex-shrink-0 w-fit md:w-fit h-25rem border-round-3xl shadow-6"
              :src="currentLocation.img"
              :alt="currentLocation.name"/>
 
@@ -459,7 +459,8 @@ export default {
 
 .slogan-bg {
   background-image:
-      url("https://i0.wp.com/static.tildacdn.com/tild3438-3232-4336-b134-623865393938/photo.png?ssl=1");
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+      url("https://i.pinimg.com/1200x/db/a3/c2/dba3c20d47e4a2a97ea79a6f279de42e.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
