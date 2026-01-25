@@ -47,17 +47,24 @@ export default {
       ],
       locations:[
         {
-          name: "Something",
-          address: "КБР, г.Нальчик, ул.Шогенцукова 10",
-          times: ['Пн-Пт: 08:00 - 23:00', 'Сб-Вс: 09:00 - 23:00'],
-          phone: "+7(909) 487-78-86",
-          img: "https://i.pinimg.com/1200x/82/f9/a7/82f9a77731896c20bf1ee47212d509d3.jpg"
+          name: "Kinki",
+          address: "Москва, ул. Осенняя, 11",
+          times: ['Пн-Пт: 08:00 - 00:00', 'Сб-Вс: 09:00 - 23:00'],
+          phone: "+7 (499) 495 44 01",
+          img: "https://i.pinimg.com/1200x/82/f9/a7/82f9a77731896c20bf1ee47212d509d3.jpg "
         },
         {
-          name: "Sometimes",
-          address: "КБР, г.Нальчик, ул.Карашаева 198",
-          times: ['Пн-Пт: 08:00 - 23:00', 'Сб-Вс: 09:00 - 23:00'],
-          phone: "+7(909) 487-78-86",
+          name: "Almanac",
+          address: "Москва, Лесная, д. 9",
+          times: ['Пн-Пт: 12:00 - 01:00', 'Сб-Вс: 12:00 - 00:00'],
+          phone: "+7 (499) 495 44 93",
+          img: "https://gastro-norma.ru/upload/iblock/917/c3nlrpu5k7x16gypj1vs7dxacvz8lhgn.webp"
+        },
+        {
+          name: "Метрополис",
+          address: "Москва, Ленинградское шоссе, д. 16А, стр. 4",
+          times: ['Пн-Вс: 09:00 - 23:00'],
+          phone: "+7 (499) 495 15 72",
           img: "https://gastro-norma.ru/upload/iblock/917/c3nlrpu5k7x16gypj1vs7dxacvz8lhgn.webp"
         }
       ]

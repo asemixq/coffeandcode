@@ -48,7 +48,7 @@ export default {
 <template>
   <div class="flex flex-column h-screen w-full overflow-y-scroll main-bg-color">
     <div class="flex flex-row border-round-xl h-fit justify-content-between w-full">
-      <div class="flex text-6xl px-4 py-2 font-medium text-gray-900">Coffee&Code</div>
+      <div class="flex text-6xl px-4 py-2 font-medium text-gray-900 font-italic">Almanac</div>
       <div class="flex flex-row align-items-center">
         <a v-for="menu in items"
            :key="menu.id"
