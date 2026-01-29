@@ -15,34 +15,33 @@ export default {
       },
       events: [
         {
-          name: "Cходка милф",
-          address: "КБР, г.Нальчик, ул.Шогенцукова 10",
-          timestart: "14:00",
-          timeend: "16:00",
+          name: "Уголок скетчера",
+          address: "Москва, Лесная, д. 9",
+          date: "10.02.2026",
+          timestart: "11:00",
+          timeend: "15:00",
           img: `../src/images/events/IMG_9369.JPG`,
-          description: "Мой отец довольно таки заядлый рыболов. Он частенько приносит домой очень крупных тунцов, сомов, щук и судаков.\n" +
+          description: "День нежных красок, мягких текстур и лёгкого вдохновения.\n" +
               "\n" +
-              "Но больше всего мне нравились тунцы, золотые гиганты."
+              "Создаём атмосферу уюта и творческого покоя, где палитра чувств и идей расцветает пастельными тонами."
         },
         {
-          name: "Cходка милф",
-          address: "КБР, г.Нальчик, ул.Шогенцукова 10",
+          name: "Виниловые истории",
+          address: "Москва, ул. Осенняя, 11",
+          date: "13.02.2026",
           timestart: "14:00",
           timeend: "16:00",
-          img: `../src/images/events/IMG_9363.JPG`,
-          description: "Мой отец довольно таки заядлый рыболов. Он частенько приносит домой очень крупных тунцов, сомов, щук и судаков.\n" +
-              "\n" +
-              "Но больше всего мне нравились тунцы, золотые гиганты."
+          img: `../src/images/events/photo_2026-01-26_09-25-16.jpg`,
+          description: "Пятница — день, когда мы замедляем цифровой век и запускаем аналоговый. В центре внимания — живой, тёплый звук винила, эстетика ушедших эпох и ритм, который собирает друзей."
         },
         {
-          name: "Cходка милф",
-          address: "КБР, г.Нальчик, ул.Шогенцукова 10",
-          timestart: "14:00",
+          name: "Семейный бранч",
+          address: "Москва, Ленинградское шоссе, д. 16А, стр. 4",
+          date: "15.02.2026",
+          timestart: "10:00",
           timeend: "16:00",
           img: `../src/images/events/IMG_9363.JPG`,
-          description: "Мой отец довольно таки заядлый рыболов. Он частенько приносит домой очень крупных тунцов, сомов, щук и судаков.\n" +
-              "\n" +
-              "Но больше всего мне нравились тунцы, золотые гиганты."
+          description: "Неторопливый день для семейного уюта и творчества. Время для совместного бранча, где взрослые могут расслабиться, а дети — создать что-то своими руками."
         }
       ],
       locations:[
@@ -127,8 +126,8 @@ export default {
 <template>
   <div class="flex flex-column h-screen w-full gap-4">
     <div class="flex flex-column slogan-bg mx-4 min-h-screen align-items-center justify-content-center border-round-3xl">
-      <label class="text-8xl">Almanac</label>
-      <label class="text-7xl text-center">Календарь хороших вкусов</label>
+      <label class="text-8xl font-light">Almanac</label>
+      <label class="text-7xl text-center font-light">Календарь хороших вкусов</label>
     </div>
 
     <div id="events" class="text-3xl md:text-5xl font-semibold text-gray-900 py-4 text-center">
@@ -155,9 +154,16 @@ export default {
             Место: {{ev.address}}
           </p>
 
+          <p class="pi pi-calendar text-lg w-full text-left">
+            Дата: {{ev.date}}
+          </p>
+
           <p class="pi pi-clock text-lg w-full text-left">
             Время: {{ev.timestart}} - {{ev.timeend}}
           </p>
+
+          <button class="text-xl text-white cursor-pointer btn-bg-color h-fit px-3 py-2 border-round-2xl
+                       ml-8 mr-8 border-none">Подробнее</button>
         </div>
 
       </div>
@@ -236,7 +242,7 @@ export default {
 
     <div class="flex w-full px-7 pb-4 gap-4">
 
-      <div class="flex flex-column md:flex-column justify-content-between gap-4 w-full">
+      <div class="flex flex-column md:flex-column justify-content-between gap-4 w-full ">
         <div class="flex flex-row p-4 gap-3 w-full border-2 card-bg-color border-round-2xl">
           <div class="flex-shrink-0 h-full align-items-center">
             <div class="flex text-6xl label_text_color bg-primary-100 border-circle w-5rem h-5rem align-items-center justify-content-center">

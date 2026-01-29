@@ -78,7 +78,7 @@ export default {
 }
 
 .main-bg-color {
-  background-color: rgb(222, 220, 212);
+  background-color: #eee2dc;
 }
 
 .menu-text-color {
