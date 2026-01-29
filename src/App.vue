@@ -14,7 +14,7 @@ export default {
           id: 2,
           label: 'События',
           icon: 'pi pi-calendar',
-          link: '#events'
+          link: '#events',
         },
         {
           id: 1,
@@ -37,6 +37,11 @@ export default {
       ]
     };
   },
+  methods: {
+    navigateTo(routeName) {
+      this.$router.push({ name: routeName })
+    },
+  },
   components: {
     InputText,
     Button,
@@ -57,12 +62,15 @@ export default {
           {{ menu.label }}
         </a>
         <button class="text-xl text-white cursor-pointer menu-text-color h-fit px-3 py-2 border-round-2xl
-                       ml-7 mr-4 border-none">Меню</button>
+                       ml-7 mr-4 border-none"
+                @click="this.navigateTo('menu')">
+          Меню
+        </button>
       </div>
     </div>
 
     <div class="w-full min-h-screen main-bg-color">
-      <MainPage />
+      <router-view />
     </div>
   </div>
 </template>
