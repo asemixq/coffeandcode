@@ -6,31 +6,31 @@ export default {
       filters: [
         {
           name: "Классические напитки",
-          link: "#classic"
+          link: "classic"
         },
         {
           name: "Авторские напитки",
-          link: "#authors"
+          link: "authors"
         },
         {
           name: "Холодные напитки",
-          link: "#cold"
+          link: "cold"
         },
         {
           name: "Чаи",
-          link: "#teas"
+          link: "teas"
         },
         {
           name: "Лимонады",
-          link: "#lemonades"
+          link: "lemonades"
         },
         {
           name: "Фреши",
-          link: "#freshes"
+          link: "freshes"
         },
         {
           name: "Еда",
-          link: "#eats"
+          link: "eats"
         },
       ],
       products: [
@@ -137,88 +137,32 @@ export default {
 </script>
 
 <template>
-<div class="flex flex-column h-screen w-full gap-4 align-items-center">
-  <div class="flex flex-column w-9 gap-5">
-    <div id="bonuses" class="text-7xl font-normal text-gray-900">
-      Меню
-    </div>
-    <div class="flex w-full">
-      <div v-for="filter in this.filters" class="border-none h-fit mx-1 px-3 py-2 border-round-2xl cursor-pointer text-white no-underline text-xl"
-              @click="this.scrollToSection(filter.id, filter.name)"
-              :class="activeCategory === `${filter.name}`?'btn-bg-color':'bg-gray-900'">
-        {{ filter.name }}
+  <div class="flex flex-column h-screen w-full gap-4 align-items-center">
+    <div class="flex flex-column w-9 gap-5 h-full">
+      <div id="bonuses" class="text-7xl font-normal text-gray-900">
+        Меню
       </div>
-    </div>
 
-    <div class="flex flex-column w-full h-full gap-4 pb-4">
-<!--      <div v-for="product in products"-->
-<!--           :key="product.id"-->
-<!--           class="flex w-full h-full gap-4 border-round-xl card-bg-color p-4">-->
+      <div class="sticky top-0 z-5 bg-transparent py-3">
+        <div class="flex w-full">
+          <div v-for="filter in filters"
+               class="border-none h-fit mx-1 px-3 py-2 border-round-2xl cursor-pointer text-white no-underline text-xl"
+               @click="this.scrollToSection(filter.link, filter.name)"
+               :class="activeCategory === `${filter.name}`?'btn-bg-color':'bg-gray-900'">
+            {{ filter.name }}
+          </div>
+        </div>
+      </div>
 
-<!--        <div class="">-->
-<!--          <div class="w-15rem h-15rem border-round-lg overflow-hidden">-->
-<!--            <img :src="product.imageUrl"-->
-<!--                 :alt="product.name"-->
-<!--                 class="w-full h-full object-cover"/>-->
-<!--          </div>-->
-<!--        </div>-->
-
-
-<!--        <div class="flex-1 flex flex-column gap-3">-->
-<!--          <div class="flex justify-content-between align-items-start">-->
-<!--            <div>-->
-<!--              <h3 class="text-xl font-bold mb-1 text-gray-900">{{ product.name }}</h3>-->
-<!--            </div>-->
-<!--            <div class="flex gap-2">-->
-<!--              <span v-if="product.isRecommended"-->
-<!--                    class="inline-block px-3 py-1 text-sm rounded-full bg-yellow-100 text-yellow-700">-->
-<!--                Рекомендуем-->
-<!--              </span>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <p class="text-gray-700 leading-relaxed">{{ product.description }}</p>-->
-<!--          <div>-->
-<!--            <h4 class="text-base font-semibold mb-2 text-gray-900">Состав:</h4>-->
-<!--            <div class="flex flex-wrap gap-2">-->
-<!--              <span v-for="(ingredient, idx) in product.composition"-->
-<!--                    :key="idx"-->
-<!--                    class="inline-block px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-700">-->
-<!--                {{ ingredient }}-->
-<!--              </span>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <div>-->
-<!--            <h4 class="text-base font-semibold mb-2 text-gray-900">Размеры и цены:</h4>-->
-<!--            <div class="flex flex-wrap gap-3">-->
-<!--              <div v-for="size in product.sizes"-->
-<!--                   :key="size.name"-->
-<!--                   class="border-1 border-gray-200 rounded-lg p-3 bg-white">-->
-<!--                <div class="font-medium text-gray-900">{{ size.name }}</div>-->
-<!--                <div class="text-sm text-gray-600 mb-1">-->
-<!--                  {{ size.volume || size.weight }}-->
-<!--                </div>-->
-<!--                <div class="text-lg font-bold text-blue-600">{{ size.price }} ₽</div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <div class="flex gap-4 text-sm text-gray-600">-->
-<!--            <div v-if="product.allergens"-->
-<!--                 class="flex align-items-center gap-1">-->
-<!--              <i class="pi pi-exclamation-triangle"></i>-->
-<!--              <span>Аллергены: {{ product.allergens.join(', ') }}</span>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-      <div v-for="filter in this.filters" :id="filter.link" class="text-8xl font-medium text-gray-900 text-center">
-        {{ filter.name }}
+      <div class="flex-grow-1 overflow-y-auto" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <div v-for="filter in filters"
+             :id="filter.link"
+             class="text-8xl font-medium text-gray-900 text-center mb-6">
+          {{ filter.name }}
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <style scoped>
